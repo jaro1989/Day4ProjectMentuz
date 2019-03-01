@@ -3,7 +3,7 @@ package by.javatr.task1;
 import java.util.Scanner;
 
 public class ArrayScanner {
-    private Scanner scanner = new Scanner(System.in);
+    public Scanner scanner = new Scanner(System.in);
 
     /**
      * @return int[]

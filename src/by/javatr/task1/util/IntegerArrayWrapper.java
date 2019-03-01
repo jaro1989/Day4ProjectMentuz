@@ -3,6 +3,7 @@ package by.javatr.task1.util;
 import java.util.Arrays;
 
 public class IntegerArrayWrapper {
+
     private int[] values;
 
     /**
