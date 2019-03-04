@@ -1,30 +1,37 @@
 package by.javatr.task1.util;
 
-
-import java.util.Scanner;
-
 public class BinaryFinder {
     private int[] arrayToBinaryFinder;
 
+
     /**
-     * @param arraySorter
+     * @param arrayWrapper
      */
-    public BinaryFinder(ArraySorter arraySorter) {
-        this.arrayToBinaryFinder = arraySorter.getArrayToSortBubble();
+    public BinaryFinder(IntegerArrayWrapper arrayWrapper) {
+        this.arrayToBinaryFinder = arrayWrapper.getValues();
     }
 
+    /**
+     * @param destinationElement
+     * @return int
+     */
+    public int toFindBinary(int destinationElement) {
+        int low = 0;
+        int high = arrayToBinaryFinder.length - 1;
 
-    private int toFindBinary(int[] arrayToBinaryFinder) {
-        Scanner scanner = new Scanner(System.in);
-        int destinationElement = scanner.nextInt();
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (destinationElement < arrayToBinaryFinder[mid]) {
+                high = mid - 1;
+                continue;
+            }
 
-        int lo = 0;
-        int hi = arrayToBinaryFinder.length - 1;
-        while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (destinationElement < arrayToBinaryFinder[mid]) hi = mid - 1;
-            else if (destinationElement > arrayToBinaryFinder[mid]) lo = mid + 1;
-            else return mid;
+            if (destinationElement > arrayToBinaryFinder[mid]) {
+                low = mid + 1;
+                continue;
+            }
+
+            return mid;
         }
         return -1;
     }

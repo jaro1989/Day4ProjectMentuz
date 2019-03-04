@@ -11,7 +11,7 @@ public class ArraySorter {
     public ArraySorter(IntegerArrayWrapper arrayWrapper) {
         this.arrayToSortBubble = arrayWrapper.getValues();
         this.arrayToSortSelection = arrayWrapper.getValues();
-        this.arrayToSortInput =arrayWrapper.getValues();
+        this.arrayToSortInput = arrayWrapper.getValues();
     }
 
     /**
