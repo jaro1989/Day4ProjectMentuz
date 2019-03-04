@@ -13,7 +13,7 @@ public class IntegerArrayWrapper {
         this.values = values;
     }
 
-    @Override
+        @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
