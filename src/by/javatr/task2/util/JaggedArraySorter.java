@@ -23,7 +23,6 @@ public class JaggedArraySorter {
      * @return int[][]
      */
     public int[][] getSortedArray() {
-        jaggedArrayRandomizer.initializeArray();
         this.jaggedArrayToSort = jaggedArrayRandomizer.jaggedArrayGetter();
 
         int[] sortedArray = this.sort();
