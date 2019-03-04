@@ -7,12 +7,12 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class JaggedArraySorter {
-    private JaggedArrayRandomizer jaggedArrayRandomizer = new JaggedArrayRandomizer();
-    private int[][] jaggedArrayToSort;
     public static final String BY_MAX = "max";
     public static final String BY_MIN = "min";
     public static final String BUBBLE = "bubble";
-
+    
+    private JaggedArrayRandomizer jaggedArrayRandomizer = new JaggedArrayRandomizer();
+    private int[][] jaggedArrayToSort;
     private String sortType;
 
     public JaggedArraySorter(String sortType) {
@@ -103,7 +103,11 @@ public class JaggedArraySorter {
 
         return sum;
     }
-
+    
+    /**
+     * @param jaggedArray int[]
+     * @return int
+     */
     private int getArrayMax(int[] jaggedArray) {
         int maximum = Integer.MIN_VALUE;
         for (int i = 0; i < jaggedArray.length; i++) {
@@ -111,9 +115,14 @@ public class JaggedArraySorter {
                 maximum = jaggedArray[i];
             }
         }
+        
         return maximum;
     }
-
+    
+    /**
+     * @param jaggedArray int[]
+     * @return int
+     */
     private int getArrayMin(int[] jaggedArray) {
         int minimum = Integer.MAX_VALUE;
         for (int i = 0; i < jaggedArray.length; i++) {
@@ -121,9 +130,15 @@ public class JaggedArraySorter {
                 minimum = jaggedArray[i];
             }
         }
+        
         return minimum;
     }
-
+     /**
+     * @param jaggedArray int[]
+     * @return int
+     *
+     * @throws RunTimeException
+     */
     private int getJaggedArrayMatches(int[] jaggedArray) {
         switch (this.sortType) {
             case BUBBLE:
@@ -133,7 +148,7 @@ public class JaggedArraySorter {
             case BY_MIN:
                 return this.getArrayMin(jaggedArray);
             default:
-                throw new RuntimeException("Wrong type wsa provided");
+                throw new RuntimeException("Wrong type was provided.");
         }
     }
 }
